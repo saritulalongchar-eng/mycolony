@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongsen Lenden Mopu | Heritage, Faith & Community</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <title>Mongsen Lenden | Heritage, Faith & Community</title>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        earth: {
+                            100: '#fdf8f6',
+                            200: '#f2e8e1',
+                            700: '#78350f',
+                            800: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(20, 83, 45, 0.92) 0%, rgba(22, 101, 52, 0.85) 50%, rgba(69, 26, 3, 0.75) 100%),
+                        url('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+        }
+        .water-pattern {
+            background-color: #f0fdf4;
+            background-image: radial-gradient(#16a34a 0.75px, transparent 0.75px), radial-gradient(#16a34a 0.75px, #f0fdf4 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            background-opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 transition-all duration-300" id="nav-container">
+            <div class="flex items-center justify-between bg-white/90 backdrop-blur-md px-6 py-3 rounded-2xl shadow-lg border border-slate-100">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-emerald-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-lg fa-church"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight block leading-tight">Mongsen Lenden</span>
+                        <span class="text-xs font-semibold text-brand-700 tracking-wider uppercase block">Ward Community</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#home" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">Home</a>
+                    <a href="#about" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">About Ward</a>
+                    <a href="#faith" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">Landmarks & Faith</a>
+                    <a href="#gallery" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">Gallery</a>
+                    <a href="#updates" class="px-3 py-2 rounded-xl text-sm font-semibold text-slate-700 hover:text-brand-700 hover:bg-brand-50 transition-colors">Notice Board</a>
+                    <a href="#contact" class="ml-2 px-4 py-2 rounded-xl text-sm font-bold bg-brand-700 hover:bg-brand-800 text-white shadow-md shadow-brand-700/20 transition-all hover:shadow-lg">Connect</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Nav Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden mt-3 bg-white/95 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-slate-100 flex flex-col gap-2">
+                <a href="#home" class="mobile-link px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700">Home</a>
+                <a href="#about" class="mobile-link px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700">About Ward</a>
+                <a href="#faith" class="mobile-link px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700">Landmarks & Faith</a>
+                <a href="#gallery" class="mobile-link px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700">Gallery</a>
+                <a href="#updates" class="mobile-link px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700">Notice Board</a>
+                <a href="#contact" class="mobile-link px-4 py-3 rounded-xl text-sm font-bold bg-brand-700 text-white text-center shadow-md">Connect</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 hero-gradient text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-12">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6 text-sm font-medium text-emerald-200 animate-pulse">
+                <i class="fa-solid fa-location-dot"></i> Nagaland, India
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6 drop-shadow-sm">
+                Mongsen Lenden
+            </h1>
+            
+            <p class="text-lg sm:text-2xl font-light text-emerald-100 max-w-3xl mx-auto leading-relaxed mb-10">
+                A vibrant colony community rooted in deep cultural heritage, unwavering Christian faith, and timeless unity.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#faith" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-brand-900 hover:bg-emerald-50 font-bold text-base shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-water-ladder text-brand-700"></i> Explore Historic Pool & Church
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-900/60 hover:bg-brand-900/80 border border-white/30 backdrop-blur-md text-white font-semibold text-base transition-all hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-users"></i> Discover Colony Life
+                </a>
+            </div>
+
+            <!-- Quick Highlight Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 max-w-3xl mx-auto">
+                <div class="glass-card rounded-2xl p-4 text-slate-800">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-brand-700">Heritage</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Cultural Roots</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-slate-800">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-brand-700">1st Baptism</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Historic Sacred Site</div>
+                </div>
+                <div class="glass-card rounded-2xl p-4 text-slate-800 col-span-2 md:col-span-1">
+                    <div class="text-2xl sm:text-3xl font-extrabold text-brand-700">Unity</div>
+                    <div class="text-xs sm:text-sm font-medium text-slate-600 mt-1">Active Community</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Colony Section -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-100 text-brand-800 font-bold text-xs uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-house-chimney"></i> Our Living Space
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                        A Sanctuary of Harmony, Peace, & Fellowship
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        <strong>Mongsen Lenden</strong> is more than just a geographic colony; it represents a close-knit family bound by mutual respect, shared spiritual values, and a rich historical legacy. Nestled in Nagaland, our community stands as a beacon of togetherness and hospitality.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        From generational stories passed down by elders to the youthful energy of our modern community gatherings, Mongsen Lenden harmoniously bridges traditional Ao Naga heritage with progressive community developments.
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <div class="w-10 h-10 rounded-lg bg-brand-600/10 text-brand-700 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-handshake-angle text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Community Spirit</h4>
+                                <p class="text-sm text-slate-600 mt-1">Every neighbor stands together during celebrations, spiritual gatherings, and civic responsibilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-50 border border-slate-100">
+                            <div class="w-10 h-10 rounded-lg bg-earth-700/10 text-earth-700 flex items-center justify-center shrink-0 font-bold">
+                                <i class="fa-solid fa-tree text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Serene Environment</h4>
+                                <p class="text-sm text-slate-600 mt-1">Surrounded by nature and scenic hillsides, offering a peaceful atmosphere for families and visitors alike.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colony Visuals Showcase -->
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white group">
+                        <img src="IMG_20260912_075321 (1).jpg" alt="Community Hillside View" class="w-full h-[450px] object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent flex flex-col justify-end p-8 text-white">
+                            <span class="text-xs uppercase tracking-widest text-emerald-300 font-bold">Lush Hills & Serene Pathways</span>
+                            <h3 class="text-xl font-bold font-serif mt-1">Life in Mongsen Lenden</h3>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden sm:block max-w-xs">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center text-xl font-bold">
+                                <i class="fa-solid fa-heart"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-medium">Core Value</p>
+                                <p class="text-sm font-bold text-slate-800">Warmth & Christian Faith</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Landmarks & Faith Section -->
+    <section id="faith" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-600/10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-earth-700/10 rounded-full filter blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 text-emerald-300 font-bold text-xs uppercase tracking-wider mb-4 border border-white/10">
+                    <i class="fa-solid fa-cross"></i> Sacred Heritage & Faith
+                </span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight mb-4">
+                    Pillars of Grace & History
+                </h2>
+                <p class="text-slate-300 text-base sm:text-lg">
+                    Discover the sacred landmarks captured in our colony that embody our spiritual journey, community worship, and historical roots.
+                </p>
+            </div>
+
+            <!-- Two Landmark Cards Grid -->
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- 1. The Colony Church -->
+                <div class="bg-slate-800/80 rounded-3xl p-8 border border-slate-700 hover:border-brand-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 rounded-2xl overflow-hidden mb-8 group">
+                            <img src="IMG_20260912_075703.jpg" alt="Colony Church Sanctuary" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-emerald-300 border border-white/10">
+                                <i class="fa-solid fa-place-of-worship mr-1"></i> Spiritual Center
+                            </div>
+                        </div>
+
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center justify-between">
+                            <span>The Colony Church</span>
+                            <i class="fa-solid fa-church text-brand-400 text-xl"></i>
+                        </h3>
+
+                        <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                The **Mongsen Lenden Colony Church** stands as the spiritual sanctuary and moral heart of our community. It is a place where families gather every Sunday, youth lift their voices in praise, and the community comes together in prayer and fellowship.
+                            </p>
+                            <p>
+                                Beyond weekly worship services, the church nurtures character, hosts youth ministry activities, choir practices, and community counseling. Its open doors symbolize safety, comfort, and the enduring love of God across generations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-700 flex flex-wrap gap-4 text-xs text-emerald-300 font-semibold">
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-bible"></i> Sunday Worship</span>
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-users text-amber-400"></i> Youth Ministry</span>
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-music text-sky-400"></i> Praise & Worship</span>
+                    </div>
+                </div>
+
+                <!-- 2. The First Christian Baptism Pool -->
+                <div class="bg-slate-800/80 rounded-3xl p-8 border border-slate-700 hover:border-emerald-500/50 transition-all duration-300 shadow-xl flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 rounded-2xl overflow-hidden mb-8 group">
+                            <img src="motion_photo_3455764371348635056.jpg.jpeg" alt="Historic First Christian Baptism Pool" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-amber-300 border border-white/10">
+                                <i class="fa-solid fa-water-ladder mr-1"></i> Sacred Historic Landmark
+                            </div>
+                        </div>
+
+                        <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center justify-between">
+                            <span>First Christian Baptism Pool</span>
+                            <i class="fa-solid fa-water text-cyan-400 text-xl"></i>
+                        </h3>
+
+                        <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+                            <p>
+                                The **First Christian Baptism Pool** is a profoundly sacred monument marking the dawn of Christianity in our region. This historic site holds deep spiritual significance as the very waters where pioneer believers publicly confessed their faith in Jesus Christ.
+                            </p>
+                            <p>
+                                Representing spiritual rebirth, transformation, and the courage of early believers, the baptism pool stands today as a treasured testimonial site. It serves as a living reminder of our salvation heritage and the eternal grace that transformed our people.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-slate-700 flex flex-wrap gap-4 text-xs text-cyan-300 font-semibold">
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-monument"></i> Historic Heritage Site</span>
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-droplet text-blue-400"></i> Symbol of Rebirth</span>
+                        <span class="flex items-center gap-1.5 bg-slate-900/60 px-3 py-2 rounded-lg"><i class="fa-solid fa-book-bible text-yellow-400"></i> Pioneer Faith</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Summary Banner -->
+            <div class="mt-12 bg-gradient-to-r from-brand-900/90 to-earth-800/90 rounded-2xl p-6 sm:p-8 border border-white/10 text-center">
+                <p class="text-base sm:text-xl font-serif italic text-emerald-100">
+                    "Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!"
+                </p>
+                <p class="text-xs uppercase font-bold text-emerald-300 mt-2 tracking-widest">— 2 Corinthians 5:17</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-100 text-brand-800 font-bold text-xs uppercase tracking-wider mb-3">
+                        <i class="fa-solid fa-camera"></i> Captured Moments
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
+                        Colony Photo Gallery
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Moments of faith, history, and life captured in Mongsen Lenden.
+                    </p>
+                </div>
+
+                <!-- Gallery Category Filters & Upload Button -->
+                <div class="mt-6 md:mt-0 flex flex-wrap items-center gap-2">
+                    <button class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-700 text-white shadow-md" data-filter="all">All Photos</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-200" data-filter="church">Church</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-200" data-filter="pool">Baptism Pool</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-200" data-filter="colony">Colony Views</button>
+
+                    <!-- Add Your Own Photo Button -->
+                    <label for="image-upload" class="cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-earth-700 hover:bg-earth-800 text-white shadow-md flex items-center gap-2 transition-transform hover:scale-105">
+                        <i class="fa-solid fa-upload"></i> Load Your Captured Pic
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" class="hidden" multiple />
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+                
+                <!-- Item 1: Church Exterior -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="church" onclick="openLightbox('https://images.unsplash.com/photo-1548625361-188849f1a26d?auto=format&fit=crop&w=1200&q=80', 'The Colony Church Sanctuary', 'The architectural beauty and serene spiritual haven of Mongsen Lenden Church.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="IMG_20260912_075703.jpg" alt="Church Sanctuary" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">Church Sanctuary</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Colony Church Front View</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">A central gathering landmark for worship, prayer, and weekly fellowship.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: First Baptism Pool -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="pool" onclick="openLightbox('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'First Christian Baptism Pool', 'The historic sacred pool symbolizing early Christian baptism and spiritual rebirth in our region.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src= "motion_photo_3455764371348635056.jpg.jpeg" alt="Baptism Pool" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-md">Historic Landmark</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">First Christian Baptism Pool</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">The sacred site marking the roots of Christian faith and spiritual transformation.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Colony Scenic View -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="colony" onclick="openLightbox('https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=1200&q=80', 'Colony Landscape', 'Lush green surroundings and tranquil environment of Mongsen Lenden.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-earth-700 bg-earth-100 px-2.5 py-1 rounded-md">Colony Nature</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Morning Hillside View</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">Peaceful mornings reflecting the serenity and warmth of our neighborhood.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Church Fellowship Gathering -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="church" onclick="openLightbox('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80', 'Community Fellowship', 'Members gathered together in joy and unity after Sunday service.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src= https://easternmirror-assets.s3.ap-south-1.amazonaws.com/images/2022/09/Molungkimomg.jpg alt="Church Gathering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-brand-700 bg-brand-50 px-2.5 py-1 rounded-md">Fellowship</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Community Gathering</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">Shared laughter, warmth, and Christian fellowship after services.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Baptism Site Detail -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="pool" onclick="openLightbox('https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=1200&q=80', 'Sacred Waters of the Baptism Site', 'Close-up perspective of the serene baptismal spring pool area.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBGRr4Kzc5nbQqCB6yfcm6NTcXDSo3cyK_9XMBBkYBg&s=10 alt="Baptism Site Waters" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-cyan-700 bg-cyan-50 px-2.5 py-1 rounded-md">Baptism Waters</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Sacred Water Spring</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">A peaceful memorial space inviting prayer and spiritual reflection.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Colony Pathway -->
+                <div class="gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer" data-category="colony" onclick="openLightbox('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80', 'Colony Pathways', 'The scenic avenues and green nature surrounding our homes.')">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src= "IMG_20261001_161701.jpg" alt="Colony Nature Pathway" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-earth-700 bg-earth-100 px-2.5 py-1 rounded-md">Neighborhood</span>
+                        <h4 class="font-bold text-slate-900 text-lg mt-2">Colony Avenues</h4>
+                        <p class="text-slate-500 text-xs mt-1 line-clamp-2">Clean, peaceful, and welcoming streets connecting every family.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Board & Community Updates -->
+    <section id="updates" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-brand-100 text-brand-800 font-bold text-xs uppercase tracking-wider mb-3">
+                    <i class="fa-solid fa-bullhorn"></i> Colony Announcements
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
+                    Notice Board & Events
+                </h2>
+                <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                    Stay connected with upcoming colony programs, church services, and youth initiatives.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Notice 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-shadow relative">
+                    <div class="w-12 h-12 rounded-xl bg-brand-600 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md">
+                        <i class="fa-solid fa-bible"></i>
+                    </div>
+                    <span class="text-xs font-bold text-brand-700 uppercase tracking-wider">Weekly Service</span>
+                    <h3 class="font-bold text-slate-900 text-xl mt-1 mb-2">Sunday Devotional & Worship</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Join us every Sunday morning at the Colony Church for uplifting praise, prayer, and divine sermon.
+                    </p>
+                    <div class="text-xs font-semibold text-slate-500 flex items-center gap-2 pt-4 border-t border-slate-200">
+                        <i class="fa-regular fa-clock"></i> Every Sunday | 9:30 AM
+                    </div>
+                </div>
+
+                <!-- Notice 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-shadow relative">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-600 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <span class="text-xs font-bold text-cyan-700 uppercase tracking-wider">Youth & Heritage</span>
+                    <h3 class="font-bold text-slate-900 text-xl mt-1 mb-2">Baptism Memorial Cleanliness Drive</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Colony youth group initiative to clean and preserve the surroundings of our historic Baptism Pool site.
+                    </p>
+                    <div class="text-xs font-semibold text-slate-500 flex items-center gap-2 pt-4 border-t border-slate-200">
+                        <i class="fa-regular fa-calendar"></i> Monthly 1st Saturday
+                    </div>
+                </div>
+
+                <!-- Notice 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-shadow relative">
+                    <div class="w-12 h-12 rounded-xl bg-earth-700 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-md">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+                    <span class="text-xs font-bold text-earth-700 uppercase tracking-wider">Ward Meeting</span>
+                    <h3 class="font-bold text-slate-900 text-xl mt-1 mb-2">General Council Meeting</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                        Quarterly community discussion regarding colony welfare, infrastructure development, and upcoming festivals.
+                    </p>
+                    <div class="text-xs font-semibold text-slate-500 flex items-center gap-2 pt-4 border-t border-slate-200">
+                        <i class="fa-regular fa-calendar-check"></i> Colony Hall
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-20 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Contact Info & Map Details -->
+                <div>
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/10 text-emerald-300 font-bold text-xs uppercase tracking-wider mb-4 border border-white/10">
+                        <i class="fa-solid fa-location-crosshairs"></i> Get In Touch
+                    </span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6">
+                        Visiting Mongsen Lenden
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-8">
+                        Whether you are a guest seeking to visit the historic **First Christian Baptism Pool**, attend services at **Mongsen Lenden Colony Church**, or connect with colony leadership, we welcome you with open arms.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-700/30 text-emerald-400 flex items-center justify-center shrink-0 border border-brand-500/30">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Location</h4>
+                                <p class="text-sm text-slate-300">Mongsen Lenden, Nagaland, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-700/30 text-emerald-400 flex items-center justify-center shrink-0 border border-brand-500/30">
+                                <i class="fa-solid fa-church"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Church Visit Enquiries</h4>
+                                <p class="text-sm text-slate-300">Open for Sunday Services & Historical Prayer Visits</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-700/30 text-emerald-400 flex items-center justify-center shrink-0 border border-brand-500/30">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Community Contact</h4>
+                                <p class="text-sm text-slate-300">mongsen.lenden@community.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Box Form -->
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700 shadow-2xl">
+                    <h3 class="font-bold text-xl text-white mb-2">Send a Message to Colony Council</h3>
+                    <p class="text-xs text-slate-400 mb-6">Have a query or wish to visit our historic landmarks? Send us a note below.</p>
+
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Full Name</label>
+                            <input type="text" required placeholder="e.g. Lipok Ao" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email / Phone</label>
+                                <input type="text" required placeholder="Contact info" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Subject</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-500 text-sm">
+                                    <option>Visiting Baptism Site</option>
+                                    <option>Church Service Timings</option>
+                                    <option>Colony Welfare Query</option>
+                                    <option>General Greetings</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Your Message</label>
+                            <textarea rows="4" required placeholder="Write your message here..." class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+
+                    <div id="form-feedback" class="hidden mt-4 p-3 rounded-xl bg-emerald-900/80 border border-emerald-500/50 text-emerald-200 text-center text-xs font-semibold">
+                        <i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Thank you! Your message has been sent to the colony committee.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div class="w-8 h-8 rounded-lg bg-brand-700 flex items-center justify-center text-white text-sm font-bold">
+                    <i class="fa-solid fa-church"></i>
+                </div>
+                <span class="text-lg font-bold text-white tracking-wide">Mongsen Lenden</span>
+            </div>
+            <p class="text-xs text-slate-500 max-w-lg mx-auto mb-6">
+                Dedicated to honoring our Christian roots, maintaining our rich heritage, and fostering unity among all residents and visitors.
+            </p>
+            <p class="text-xs text-slate-600">
+                &copy; <span id="current-year"></span> Mongsen Lenden Colony. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Photo Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-brand-400 transition-colors focus:outline-none">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 flex flex-col md:flex-row">
+            <div class="md:w-2/3 bg-black flex items-center justify-center min-h-[300px] max-h-[70vh]">
+                <img id="modal-img" src="" alt="Expanded View" class="max-h-[70vh] w-full object-contain">
+            </div>
+            <div class="md:w-1/3 p-6 flex flex-col justify-between text-white">
+                <div>
+                    <h3 id="modal-title" class="text-xl font-bold font-serif mb-2 text-emerald-300"></h3>
+                    <p id="modal-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed"></p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-500">
+                    Mongsen Lenden Photo Archive
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-xl';
+            }
+        });
+
+        // Close Mobile Menu when clicking link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars text-xl';
+            });
+        });
+
+        // Gallery Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-700', 'text-white', 'shadow-md');
+                    b.classList.add('bg-white', 'text-slate-700');
+                });
+                btn.classList.add('bg-brand-700', 'text-white', 'shadow-md');
+                btn.classList.remove('bg-white', 'text-slate-700');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Modal Handler
+        function openLightbox(imgSrc, title, desc) {
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('lightbox-modal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox-modal').classList.add('hidden');
+        }
+
+        // Close Modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+
+        // Dynamic Image Upload Reader (allows user to upload their captured pics to view in grid!)
+        document.getElementById('image-upload').addEventListener('change', function(e) {
+            const files = e.target.files;
+            if (!files || files.length === 0) return;
+
+            const grid = document.getElementById('gallery-grid');
+
+            Array.from(files).forEach(file => {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgUrl = event.target.result;
+                    const card = document.createElement('div');
+                    card.className = "gallery-card group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 cursor-pointer animate-fade-in";
+                    card.setAttribute('data-category', 'user-upload');
+                    card.onclick = () => openLightbox(imgUrl, file.name.replace(/\.[^/.]+$/, ""), "Captured photo uploaded by user.");
+
+                    card.innerHTML = `
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="${imgUrl}" alt="User Captured Photo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center text-lg"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-[10px] font-extrabold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md">Uploaded Photo</span>
+                            <h4 class="font-bold text-slate-900 text-lg mt-2 truncate">${file.name.replace(/\.[^/.]+$/, "")}</h4>
+                            <p class="text-slate-500 text-xs mt-1">Your captured picture loaded into Mongsen Lenden Gallery.</p>
+                        </div>
+                    `;
+                    grid.prepend(card);
+                };
+                reader.readAsDataURL(file);
+            });
+        });
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            document.getElementById('contact-form').reset();
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
